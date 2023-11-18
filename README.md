@@ -1,2 +1,2 @@
 # Discrete-Time-Convolution-Calculator
-Basic discrete time signal convolution controller. Only works on integer values for now.
+Basic discrete time signal convolution calculator. Only works on integer values for now.
