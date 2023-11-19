@@ -36,7 +36,8 @@ public class Main {
 
         for (int i = hn_coordinates_x.size() - 1; i >= 0; i--) {
             reversed_hk_coordinates_x.add(-hn_coordinates_x.get(i));
-            reversed_hk_coordinates_y.add((hn_coordinates_y.get(i)));
+            //No need to reverse y values
+            reversed_hk_coordinates_y.add(hn_coordinates_y.get(i));
         }
 
         //Range of min and max shift
@@ -64,10 +65,10 @@ public class Main {
 
             int sum_of_overlaps = 0;
 
-            for (int x = 0; x < reversed_and_shifted_hk_coordinates_x.size(); x++) {
-                int a = xn_coordinates_x.indexOf(reversed_and_shifted_hk_coordinates_x.get(x)); //If it is -1, no overlap on x-coordinate in this x value
+            for (int j = 0; j < reversed_and_shifted_hk_coordinates_x.size(); j++) {
+                int a = xn_coordinates_x.indexOf(reversed_and_shifted_hk_coordinates_x.get(j)); //If it is -1, no overlap on x-coordinate for current j value
                 if (a != -1) {
-                    sum_of_overlaps += xn_coordinates_y.get(a) * reversed_and_shifted_hk_coordinates_y.get(x);
+                    sum_of_overlaps += xn_coordinates_y.get(a) * reversed_and_shifted_hk_coordinates_y.get(j);
                 }
             }
             if (sum_of_overlaps != 0) {
